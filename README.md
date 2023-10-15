@@ -24,8 +24,8 @@ This circuit has also some essential safety-functions:
    engine overheatings. If the motor-temperature exceeds 80°C, the µC goes into an endless loop, and reactivating PWM
    is only possible by switching off (main-power) or by pushing the reset-button of the µC.
 
-!!!: Protection against direction of rotation switching ***while driving*** is NOT provided here: Due to this, and if so an "EMF short circuit" occurs,  
-the "Kemo-M240" controller shots the power-control off in a fractions of a second and thus at least protects the mechanics of the machine.  
+!!!: Protection against direction of rotation switching ***while driving*** is NOT provided here: Due to this, and if so an "EMF short circuit" occurs,
+the "Kemo-M240" controller shots the power-control off in a fractions of a second and thus at least protects the mechanics of the machine.
 The electronics then can only be reactivated after a complete restart - either per µContoller-Reset or after Main-Power Shutdown.
 
 Disclaimer:
