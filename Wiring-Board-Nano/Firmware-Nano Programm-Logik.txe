@@ -1,0 +1,54 @@
+Firmware-Nano: Überlegungen zu Logik / Flußdiagramm
+---------------------------------------------------
+
+Sicherheits-Bedenken:
+Gegen Stromausfall (wie beim Ausschalten, Punkt 3.) sind Sicherheits-Funktionen eingebaut - sowohl passive (HW) als auch aktive (SW-gesteuert):
+- wenn die 5V-Power-Versorgung ausfällt, sind alle Signale, auch alle aktiven Output-Signale auf 0, d.h.: => 
+- wenn Output D12=0 (AQY214EH), dann fällt Discharge (R9) weg und nur noch R8 (220k) entlädt passiv (länger als R9) => OK, da nach Abschaltung genügend Zeit vorhanden ist,
+- wenn Input A4=0 (Reverse-Detection), wird die Variable "umsch"=0, somit wird auch "run" auf 0 gesetzt => kein PWM,
+- wenn Output A1=0 (Reverse-Relais K1), dann fällt dieses Trenn-Relais (NC) ab, somit ist es (für die Stromdurchleitung) geschlossen => egal, da PWM etc. sowieso "Off",
+- wenn Output A3=0 (Signal-LED), dann leuchtet die Panel-Signal-LED nicht mehr => kein Problem, denn dadurch weiß man, dass auf der Steuerung ist "kein Strom" drauf ist,
+- wenn Input A0=0 (10k-Poti-Schleifer), dann wird sowieso die PWM auf "0" gesetzt, also Output-(PWM)-Signal auf Pin-D13 = 0,
+- wenn Input A2=0 (NTC), dann fällt zwar die softwaregesteuerte Übertemperatur-Sicherung aus, aber der 230V-Lüfter bleibt an, + da alle Output-Signale aus sind => OK,
+- wenn der Strom ausfällt und die Maschine (noch) weiterläuft => Gegen-EMK => EMI-Filter-Aufladung, dann entlädt diese Spannung sich über das noch vorhandene Stromnetz,
+    ansonsten (passiv) Entladung über den Entlade-Widerstand R8 (220k/2W), zwar langsamer, aber OK.
+
+Drei Variablen:
+Die ersten 2 Variablen sind Inputs, die 3. "run" = "darf-laufen" => gibt das PWM-Output-Signal auf D13 frei:
+- "active": zeigt über D3-In (vom Hall-S). an, ob der Motor läuft oder nicht (1=läuft, 0=steht),
+- "umsch":  zeigt über A4-In (=Polwende-S.) an, ob der Umschalter auf R/L ist ("umsch"=1) oder auf Pos-0 ("umsch"=0)
+- "run":    NUR wenn run=1, darf "var" (=Poti-A0) auf Pin-D13 ein PWM-Signal ausgeben, ansonsten wird "run"=0 gesetzt.
+FlipFlop-Logik:
+- Bei einem Richtungswechsel: "umsch"=0 löst das SW-"FlipFlop" aus => "run"=0 !
+     a) Flip: Wenn D3=an (=wenn Mot. läuft, ist "active"=1) UND wenn dabei der Polwendeschalter "umsch"=0 geht, dann muss "run"=0 werden und bleibt erstmal auf 0,
+     b) Flop: Wenn der Motor wieder steht, ist "active"=0 ("run" ist immer noch 0), dann kann nach +0,5s "run" wieder auf 1 gesetzt werden, (egal wie "umsch" dann dabei steht).
+
+Software-Anforderungen:
+-----------------------
+1. Einschalten:
+- Nach dem Einschalten (Schütz Ein) soll das Trenn-Relais geschlossen (A1=0) bleiben und das AQY214 soll "an" sein (D12=0) => R9-Power-Discharge entlädt, (=> SW-setup),
+- Wenn dabei der Polwendeschalter auf Pos-0 steht, ist das Trenn-Relais aus ("umsch"=0) und "nichts geht mehr", egal auf welcher Position das Poti steht, (=> SW-setup),
+- Wenn dabei der Polwendeschalter auf R/L steht, soll die Maschine normal anlaufen (kein Schutz gegen unbeabsichtigtes Anlaufen, dafür ist der Ein-/Aus-Schalter gedacht!),
+- Wenn von Pos-0 aus (auf R/L) umgeschaltet wird oder auf Pos-0 steht und Hall-S.(D3) = 0, dann kann SOFORT "Gas"(PWM) gegeben werden =>
+    => "run"=1 => D12=1 (Discharge-R9 getrennt), aber A1=0 (Trenn-Relais bleibt zu).
+
+2. Vorbeugung/Sicherung gegen Umschalten während der Fahrt: => Gegen-EMK: GEFAHR von mechanischen sowie elektronischen Beschädigungen!:
+- Nach dem Umschalten "auf voller Fahrt" von L oder R => auf Pos-0 und weiter => auf R/L soll SOFORT (bei Pos-0) das (NC)-Trenn-Relais öffnen => (A1=1) und getrennt BLEIBEN,
+    d.h., variable "run"=0 und Output D12=0 (AQY214) werden zum Entladen *aktiv* auf GND(="0") geschaltet. Entladung soll gleiche Zeit sein wie Trenn-Relais offen ist,
+    dazu wird A1=1 (Trenn-Relais) beim Schalten geöffnet, um mögliche Schäden zu verhindern.
+    Dazu: Entlade-Widerstand R9 liegt "hinter" dem Trenn-Relais (=zwischen und !
+- Beim Umschalt/Weiterschalten (R/L => 0 => R/L) wird gleichzeitig IMMER geprüft, ob der Motor sich noch dreht (D3/Hall-S.="1" => "run"=0), und...
+- ...wenn der Motor sich noch dreht (nach einem Schaltvorgang), dann soll "active"=1 (A1=1) und "run"=0 (D12=0) BLEIBEN, d.h. R9 entlädt weiter.
+- Motor darf nicht anlaufen, bevor Stillstand erreicht ist *plus 0,5s Entladungszeit*, d.h. => "run" bleibt auf 0, bis dass D3(HS)-Input mit "0" OK meldet (Stillstand)
+- dann noch weitere 0,5s entladen (=gleiche Kostellation wie zuvor) und erst dann...
+    ...kann das Trenn-Relais wieder dran ("run"=1 => A1=0), der Entlade-Widerstand R9 wird getrennt (=> D12=1) und PWM-Output auf Pin-D13 kann loslegen ("run"=1)...
+
+3. Ausschalten:
+- Nach "Switch-Off" fällt das 30A-Power-Relais von selber ab (Trenn-Relais) und schließt die Leitung (NC). Die nachträgliche Entladung geht nur noch durch R8, auch OK.
+- Der Arduino-Nano geht auf "0", damit ist die PWM aus (auf 0V) und auch alle Ein- und Ausgänge sind auf "0" = OK. Der Lüfter bleibt an, bis Ein/Aus-Schalter "Off".
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Input/Output:
+- Wenn der Motor läuft ("run"=1), dann sendet der Hall-Sensor Impulse => D3-input = 1     =>  "active" = 1, und wenn er steht, dann ist "active" = 0
+- Wenn der Wendeschalter auf "L/R" = eingeschaltet steht, dann ist Rev.-Det. A4-input = 1 =>  "umsch"  = 1, und wenn er steht, dann ist "umsch"  = 0
+- Egal, wie das 10k-Poti steht, angefahren darf erst werden, wenn "run" = 1 ist. Erst dann wird die PWM freigeschaltet.

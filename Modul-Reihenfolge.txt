@@ -1,0 +1,27 @@
+HAUPTPLATINE (Hardware)
+-----------------------
+
+Modul-Reihenfolge:														English
+==================														=======
+- 230VAC-Eingang mit 10AT-Sicherung (F1)											230VAC input with 10AT fuse (F1)
+- Stopp- und Not-Aus-Schalter: 2x µSchalter, 1x Not-Aus (Emergency-Switch)							Emergency Stop-Switch + Micro-Switches
+- Selbsthalte-Schaltschütz 25A/230V-2pol-NO mit Ein/Aus-Taster(NC/NO), siehe: "EinAus-Selbsthalteschalter-mit-Schütz.sch"	On-Off-Button with Selfholding-Contactor
+- Dahinter: Abzweigung Schaltnetzteil 230VAC => 5VDC/600mA für Wiring-Board + uController (mit Arduino-Mini oder -Nano)		Switching-Power-Supply 5V/600mA + Wiring-Board w. A.-Nano
+           +Abzweigung Motorraum-Ventilator												+Engine compartment Fan 230V
+- EMV-Filter 10A/230V														EMI-Filter 10A/230V (Electromagnetic Interference Filter)
+- Wiring-Board: PWM-Phasenanschnitt-Steuerung (+5V DC), Speed-Poti und Sensoren							PWM phase control (+5V DC), Speed-Potentiometer and Sensors
+- Brückengleichrichter (15-20A / 1500V)												Bridge-Rectifier
+- Motor-Richtungs-Umschalter (Polwendeschalter)											Reversing-Switch (for Motor direction)
+- HF-Filter 230V/10A gegen Kohlebürsten-Feuer (bei langen Motor-Zuleitungen)							EMI-Filter 10A/230V against Carbon-brush-fire for long Leads
+- Motor mit 10AT-Sicherung und Sensoren: Hall-Sensor für Drehzahlmessung + NTC-Sensor für Motor-Überhitzungs-Kontrolle		Motor with 10AT-Fuse and Sensors
+
+
+Arduino Programm (Software):
+----------------------------
+- 125Hz-PWM-Out an D13 (je nach 10k Poti-Stellung am A0-Eingang)
+- Sanftanlauf: PWM Rampenlänge/Zeit => PWM-"increase++" von 0 bis Potistellung) - im Kemo240-Modul enthalten			Soft-start
+- Übertemperatur-Abschaltung bei über 80°C durch 100kOhm NTC-Sensor im Motor (=> Analog-Signal am A2-Eingang)			Over-temperature shutdown
+- Blockade-Abschaltung durch Motorstrom-Messung => im Kemo-240-Modul vorhanden!							Blockage-Shutdown by Motor-current-measurement
+- Upm Messung an 4x7-bit LED-Display mit Hall-Sensor und 4 Impulsen/Umdrehung(!) an Motor-Achse => siehe Frequenzzaehler.ino	rpm measurement and display
+- 4-digit-Display Anzeige: (Ansteuerung: https://www.circuitbasics.com/arduino-7-segment-display-tutorial auf ½ Seitenhöhe),	4-digit LED-Display with Buffer-IC TM1638
+  => das 4-stellige Display ist mit Puffer-IC "TM1638" (LED-tube-driver) einfacher anzusteuern => kaum Flackern!
