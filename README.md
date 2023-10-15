@@ -3,8 +3,8 @@ Control for direction-switchable 230V *direct current* (DC)-motors, whose speed 
 using a PWM (Pulse Width Modulation) in the low voltage range, generated here by a microController.
 ![325V-DC-Motor-on-Phase-Control_Principle-Diagram](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/1215f584-f1fe-4574-99d1-6883fae35f82)
 Priciple of a Poti-Controlled Phase-Control for 230VAC (325VDC) Motors.  
-The picture above shows a basic diagram for the electronic control of a 230V DC motor, e.g. a hobby lathe, connected to a **single-phase**  
-(230V) AC-current network.
+The picture above shows a basic diagram for the electronic control of a 230V **DC** motor, e.g. a hobby lathe, connected to a **single-phase**  
+(230V) **AC**-current network.
 
 Phase control circuits are often used for simple speed controls, here a P.C. with Bridge-Rectifier for reversible 230V DC electric motors,
 which are often used in medium power hobby machines (up to 10 amps ≙ approx. 2300 watts), such as lathes and milling benches.
