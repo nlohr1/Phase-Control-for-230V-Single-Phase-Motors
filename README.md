@@ -112,6 +112,6 @@ give-it-out to an external PCB layout-service.
 In a separate article I will describe a new and simple method to make exact 2-sided DIY-PCB-layouts.
 
 Documents are available as Eagle layouts, pdf-Files and as Gerber/Excellon files (in attached CAM .zip archives).
-So also both Arduino Sketches (for the Arduino-Nano "heart"-Module: "Firmware-Nano.ino" and for the DIY-Board with ATmega328-uController or  
-the Ardino-Mini-Pro-Module for the DIY-Speedometer, "Tachometer-using-Arduino.ino" for which I provided thereto
-a 3D-printable case + frame-parts for a 4x7-LED-Display.
+So also both Arduino Sketches (for the Arduino-Nano "heart"-Module: "Firmware-Nano.ino" and the Sketch for the DIY-Speedometer-*Board* with an ATmega328-uController + 4x7-LED-Display ***or***  
+for the wired version of this DIY-Speedometer with an Ardino-Mini-Pro-*Module* + 4x7-LED-Display, wired together, using both the sketch "Tachometer-using-Arduino.ino".  
+I provided thereto a 3D-printable case + frame-parts adapted to insert+glue the 4x7-LED-Display into.
