@@ -5,7 +5,7 @@ using a PWM (Pulse Width Modulation) in the low voltage range, generated here by
 Priciple of a Poti-Controlled Phase-Control for 230VAC (325VDC) Motors.  
 The picture above shows a basic diagram for the electronic control of a 230V **DC** motor, e.g. a hobby lathe, connected to a **single-phase** (230V) **AC**-current network.
 
-Phase control circuits are often used for simple speed controls, here a P.C. with Bridge-Rectifier for reversible 230V DC electric motors,
+Phase control circuits are often used for simple speed controls, here with an additional Bridge-Rectifier for 230V DC electric motors,
 which are often used in medium power hobby machines (up to 10 amps ≙ approx. 2300 watts), such as lathes and milling benches.
 ![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/25a48b36-aa1e-4cca-b5c9-efbb3eb60a19)
 Since electronic controls of 230V *DC* motors in today's hobby machines (such as lathes, milling benches, etc.) often are built with
@@ -15,21 +15,24 @@ on the market *and* at the same time are better protected against overloads, inc
 All 230VDC (direct current!) brushed motors with up-to 2300 Watts can be controlled with this phase control board. It allows to control
 the speed of the motor (0-100%) as well as the motor direction of rotation.
 
+Main Schematic / Wiring Connections:
+![Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_Übersicht_DE](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_%C3%9Cbersicht.png)
+
 ## Safety features
 This circuit has also some essential safety-functions:
-- The main module "Kemo-M240" used here contains an integrated soft start, needed to start up larger motors,
+- The main module "Kemo-M240" used here contains an integrated soft start, needed to start up strong motors (>800 - 2300 Watts),
    to avoid the tripping of standard 16A household fuses
 - This module also contains an automatic overload or anti-lock shutdown with electronic reset
 - If the used Motor contains a built-in NTC-thermistor (with 100kOhm), the µController can provide a protection against
    engine overheatings. If the motor-temperature exceeds 80°C, the µC goes into an endless loop, and reactivating PWM
    is only possible by switching off (main-power) or by pushing the reset-button of the µC.
 
-!!!: Protection against direction of rotation switching ***while driving*** is NOT provided here: Due to this, and if so an "EMF short circuit" occurs,
+!!!: Protection against direction of rotation switching ***while driving*** is NOT provided: if so an "EMF short circuit" occurs,
 the "Kemo-M240" controller shots the power-control off in a fractions of a second and thus at least protects the mechanics of the machine.
-The electronics then can only be reactivated after a complete restart - either per µContoller-Reset or after Main-Power Shutdown.
+Electronics then can only be reactivated after a complete restart - either per µContoller-Reset or after complete Main-Power Shutdown.
 
 Disclaimer:
-!!! It goes without saying that you reproduce this circuit at your own risk and responsibility!!!
+!!! It goes without saying that you reproduce this circuit at your own risk and responsibility !!!
 Anyone who does not have sufficient knowledge of how to handle *dangerous* 230VAC currents or 325VDC(ss) voltages(!):
 If you are not familiar with electrical or electronic components, you should either hire a specialist to do it for you
 or stay away from it!
@@ -48,9 +51,6 @@ In any case, a replica of this project is done expressly and explicitly *at your
    However, any weak to poor efficiency that occurs should be taken into account (including heat losses).
 
 Factual suggestions for improvements and changes are always welcome!
-
-Main Schematic / Wiring Connections:
-![Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_Übersicht_DE](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_%C3%9Cbersicht.png)
 
 ## Principle description:
 The control works according to the 230VAC phase control principle (similar to a lamp dimmer), but in contrast to this
@@ -78,8 +78,8 @@ The control consists of several modules chained(wired) one behind the other:
 9. at last the 325V DC (=direct current) motor.
 
 ## The Wiring Board:
-The only part that still needs to be soldered together + programmed is the “wiring board”. It serves to wire/connect the Low-Voltage
-PWM-Signal to the main phase control module "Kemo-M240" and other low-voltage connections as LEDs and Sensors.  
+The only part that still needs to be soldered together + programmed is the “wiring board”. It serves to wire/connect the Low-Voltage PWM-Signal
+to the main phase control module "Kemo-M240" and other low-voltage connections as LEDs and Sensors.  
 This wiring board also contains the Arduino Nano µController as the heart of the circuit, some passive components (resistors + capacitors) and
 the JST-Connectors for the NTC-Sensor, the Signal-LED and the Speedometer (rpm display), plus the Discharge Circuit for both Discharge Resistors,
 to avoid uncontrolled starting impulses and a jerk starting of the motor, while switching it to reverse-direction.
@@ -89,29 +89,32 @@ to avoid uncontrolled starting impulses and a jerk starting of the motor, while 
 
 The “wiring board” with the Arduino Nano is provided as schematic and as PCB-layout in Eagle format - which can
 easily be converted into other formats. Included are also .pdf-files and layouts, prepared for the DIY "toner-direct-method"
-and for external PCB-Services.
+and also for external PCB-Services.
 
 ## Speedometer:
 ![Speedometer](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/33459c03-00fe-4def-9850-420df5149345)
 
 ## DIY-Speedometer:
 ![4x7-Segment-LED-Display-Module](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/4ce9e9f0-d56a-4a53-8fab-c4b05e97ae68)
+
+**Schematic and Layout of the DIY-Speedometer**:  
 ![Tachometer-with-4x7-Segm-LED-Display_sch](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/7436ab00-27f8-456e-ae47-7618ab607492)
 ![Tachometer-with-4x7-Segm-LED-Display_pcb](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/b8c57f8a-a1c3-4273-8336-95b31fcea549)
 
 The DIY-Speedometer consists of a 4-digit LED display and an "Arduino Mini Pro" with 2 pieces of 10k resistors to GND. This tachometer can either be “manually wired”:
-- by wire-connecting the 4-digit LED-Display to the Mini-Pro-Board + 2x 10k resistors to GND,
+- by wire-connecting a 4-digit LED-Display module to a (Arduino-)Mini-Pro board + 2x 10k resistors to GND,
    or
-- soldering SMD-parts on a SMD-Board with the provided Board-layout. Both Schematic + Layout as well as the BOM (Bill of Materials) are included.
+- soldering SMD-parts on a DIY-Board with above provided layout. For this purpose I included Schematic + Layout, as well as BOM (Bill of Materials).
 
-The speedometer for speed display/control can also be purchased as a (ready-made) module - but then the "running" monitor + also the discharge-unit
-is no longer availane / thereby (and can be ignored).
+The speedometer for speed display/control of the motor can also be purchased as a (ready-made) module - but this has no "running" monitor Signal and
+so the discharge-unit (on the wiring-board) is no longer switching on/off (15k-Resistor R9).
 
 Anyone who is familiar with DIY-etching of circuit boards can either use the 2-sided Toner Direct Method (.pdf plans for 2-sided copy in 1:1 scale) or
 give-it-out to an external PCB layout-service.  
-In a separate article I will describe a new and simple method to make exact 2-sided DIY-PCB-layouts.
+In a further -separate- article I will describe a new and simple method to make exact 2-sided DIY-PCB-layouts through laser-direct-burning water-resistant
+etch-protecting ink.
 
 Documents are available as Eagle layouts, pdf-Files and as Gerber/Excellon files (in attached CAM .zip archives).
 So also both Arduino Sketches (for the Arduino-Nano "heart"-Module: "Firmware-Nano.ino" and the Sketch for the DIY-Speedometer-*Board* with an ATmega328-uController + 4x7-LED-Display ***or***  
 for the wired version of this DIY-Speedometer with an Ardino-Mini-Pro-*Module* + 4x7-LED-Display, wired together, using both the sketch "Tachometer-using-Arduino.ino".  
-Thereto enclosed also a 3D-printable case + frame-parts, adapted to insert+glue the 4x7-LED-Display.
+Thereto enclosed is also a 3D-printable case + frame-parts, adapted to insert+glue the 4x7-LED-Display module.
