@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.003125" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.00625" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -71,6 +71,7 @@
 <layer number="90" name="Modules" color="5" fill="1" visible="no" active="no"/>
 <layer number="107" name="rost" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="108" name="blau" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="109" name="Outline" color="49" fill="1" visible="yes" active="yes"/>
 <layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
 <layer number="218" name="218bmp" color="19" fill="1" visible="no" active="no"/>
 <layer number="219" name="219bmp" color="20" fill="1" visible="no" active="no"/>
@@ -220,7 +221,7 @@
 <rectangle x1="55.18375" y1="3.14384375" x2="56.0739" y2="4.6064875" layer="104" rot="R150"/>
 <rectangle x1="26.035" y1="1.01695" x2="28.09875" y2="5.873753125" layer="42" rot="R180"/>
 <rectangle x1="39.789615625" y1="3.2354875" x2="40.740278125" y2="4.453725" layer="104" rot="R240"/>
-<text x="4.765625" y="3.089375" size="0.8128" layer="101" ratio="10">cut #0,7mm</text>
+<text x="4.765625" y="3.406875" size="0.8128" layer="101" ratio="10">cut #0,7mm</text>
 <wire x1="15.319375" y1="3.730625" x2="1.925625" y2="3.730625" width="0.7" layer="46"/>
 <wire x1="58.42" y1="14.9225" x2="58.42" y2="13.6525" width="0.127" layer="21"/>
 <wire x1="58.42" y1="13.6525" x2="57.785" y2="13.0175" width="0.127" layer="21"/>
@@ -239,33 +240,24 @@
 <text x="58.8271875" y="8.255" size="0.762" layer="27" ratio="10">GND</text>
 <rectangle x1="64.531875" y1="16.32734375" x2="69.030175" y2="22.463125" layer="42"/>
 <rectangle x1="63.024671875" y1="25.147665625" x2="64.750190625" y2="27.04095625" layer="103" rot="R45"/>
-<text x="71.755" y="13.874375" size="1.016" layer="27" ratio="10" rot="R90">Rev.Det.</text>
 <rectangle x1="55.683946875" y1="9.5646875" x2="61.478321875" y2="11.1521875" layer="41" rot="R90"/>
 <rectangle x1="64.16715625" y1="15.78530625" x2="65.854125" y2="16.3733625" layer="41"/>
 <rectangle x1="3.726034375" y1="13.5739375" x2="29.829728125" y2="15.06975625" layer="41" rot="R90"/>
 <circle x="0" y="0" radius="0.3" width="0.254" layer="16"/>
 <circle x="0" y="0" radius="0.3" width="0.254" layer="1"/>
 <hole x="0" y="0" drill="0.6"/>
-<wire x1="-0.42701875" y1="-0.4274875" x2="-0.42701875" y2="0.572803125" width="0" layer="20"/>
-<wire x1="-0.42701875" y1="-0.4274875" x2="0.52936875" y2="-0.4274875" width="0" layer="20"/>
 <circle x="70.00875" y="0" radius="0.3" width="0.254" layer="16"/>
 <circle x="70.00875" y="0" radius="0.3" width="0.254" layer="1"/>
 <hole x="70.00875" y="0" drill="0.6"/>
-<wire x1="70.4362375" y1="-0.42701875" x2="69.435946875" y2="-0.42701875" width="0" layer="20"/>
-<wire x1="70.4362375" y1="-0.42701875" x2="70.4362375" y2="0.52936875" width="0" layer="20"/>
 <circle x="70" y="31" radius="0.3" width="0.254" layer="16"/>
 <circle x="70" y="31" radius="0.3" width="0.254" layer="1"/>
 <hole x="70" y="31" drill="0.6"/>
-<wire x1="70.42701875" y1="31.4274875" x2="70.42701875" y2="30.427196875" width="0" layer="20"/>
-<wire x1="70.42701875" y1="31.4274875" x2="69.47063125" y2="31.4274875" width="0" layer="20"/>
 <circle x="0" y="31" radius="0.3" width="0.254" layer="16"/>
 <circle x="0" y="31" radius="0.3" width="0.254" layer="1"/>
 <hole x="0" y="31" drill="0.6"/>
-<wire x1="-0.4274875" y1="31.42701875" x2="0.572803125" y2="31.42701875" width="0" layer="20"/>
-<wire x1="-0.4274875" y1="31.42701875" x2="-0.4274875" y2="30.47063125" width="0" layer="20"/>
 <rectangle x1="0.635" y1="26.32859375" x2="3.70455" y2="27.49740625" layer="42"/>
-<wire x1="6.680625" y1="30.906875" x2="6.680625" y2="20.023125" width="0.7" layer="46"/>
-<text x="6.99125" y="22.069375" size="0.8128" layer="101" ratio="10" rot="R90">cut #0,7mm</text>
+<wire x1="6.680625" y1="30.906875" x2="6.680625" y2="21.928125" width="0.7" layer="46"/>
+<text x="6.99125" y="23.021875" size="0.8128" layer="101" ratio="10" rot="R90">cut #0,7mm</text>
 <circle x="27.128934375" y="2.54" radius="0.15875" width="0.127" layer="21"/>
 <wire x1="25.858934375" y1="1.899871875" x2="25.858934375" y2="3.169871875" width="0.127" layer="21"/>
 <wire x1="25.858934375" y1="3.169871875" x2="26.493934375" y2="3.804871875" width="0.127" layer="21"/>
@@ -323,6 +315,11 @@
 <rectangle x1="58.931415625" y1="5.080003125" x2="59.740109375" y2="5.67558125" layer="103" rot="R180"/>
 <rectangle x1="55.403359375" y1="16.360684375" x2="56.84619375" y2="16.948740625" layer="41" rot="R270"/>
 <text x="23.875625" y="3.188125" size="0.762" layer="27" ratio="10">+5V</text>
+<text x="1.809375" y="-1.905" size="1.016" layer="27" ratio="10">Discharge</text>
+<wire x1="-0.35" y1="-0.35" x2="70.35" y2="-0.35" width="0.7" layer="109"/>
+<wire x1="70.35" y1="-0.35" x2="70.35" y2="31.35" width="0.7" layer="109"/>
+<wire x1="70.35" y1="31.35" x2="-0.35" y2="31.35" width="0.7" layer="109"/>
+<wire x1="-0.35" y1="31.35" x2="-0.35" y2="-0.35" width="0.7" layer="109"/>
 </plain>
 <libraries>
 <library name="rcl1">
