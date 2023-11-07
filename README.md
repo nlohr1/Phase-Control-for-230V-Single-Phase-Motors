@@ -50,7 +50,7 @@ In any case, a replica of this project is done expressly and explicitly *at your
 Factual suggestions for improvements and changes are always welcome!
 
 Main Schematic / Wiring Connections:
-![Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_Übersicht_DE](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/99ebccd1-6ecb-41b8-859e-cefe9b215131)
+![Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_Übersicht_DE](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_%C3%9Cbersicht.png)
 
 ## Principle description:
 The control works according to the 230VAC phase control principle (similar to a lamp dimmer), but in contrast to this
