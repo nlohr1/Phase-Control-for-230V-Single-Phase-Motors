@@ -7,9 +7,11 @@ The picture above shows a basic diagram for the electronic control of a 230V **D
 
 Phase control circuits are often used for simple speed controls, here with an additional Bridge-Rectifier for 230V DC electric motors,
 which are often used in medium power hobby machines (up to 10 amps ≙ approx. 2300 watts), such as lathes and milling benches.
-![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/25a48b36-aa1e-4cca-b5c9-efbb3eb60a19)  
-<b>Another alignment purpose:</b>  
-[3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano_v2]()  
+
+### Possible alignment of used modules on a 5mm acrylic base-board:
+![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/25a48b36-aa1e-4cca-b5c9-efbb3eb60a19)
+### Another alignment purpose:
+![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano_v2](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/3D-Steuerung-f%C3%BCr-B%C3%BCrsten-Gleichstrom-Motor-325V_Nano_v2.png)  
 Since electronic controls of 230V *DC* motors in today's hobby machines (such as lathes, milling benches, etc.) often are built with
 inexpensive components that are not protected against surges or current peaks – some electronic-failures are inevitable.
 So I decided to use a circuit that works a little more reliable, with electronic components and *modules* that are readily available
@@ -17,7 +19,8 @@ on the market *and* at the same time are better protected against overloads, inc
 All 230VDC (direct current!) brushed motors with up-to 2300 Watts can be controlled with this phase control board. It allows to control
 the speed of the motor (0-100%) as well as the motor direction of rotation.
 
-Main Schematic / Wiring Connections:
+### Main Schematic / Wiring Connections:
+⇒ *(the DIY-Wiring-Board with the Ardujino-nano here is yellow-framed)*
 ![Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_Übersicht_DE](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_%C3%9Cbersicht.png)
 
 ## Safety features
