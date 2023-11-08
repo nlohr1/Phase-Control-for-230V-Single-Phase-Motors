@@ -1,4 +1,4 @@
-# Phase-Control-for-230V-Single-Phase-Motors
+# Phase-Control-for-230V-Single-Phase-Motors v2
 Control for direction-switchable 230V *direct current* (DC)-motors, whose speed (rpm) can be controlled using a Potentiometer *or*  
 using a PWM (Pulse Width Modulation) signal in the low voltage range, generated here by a microController.
 ![325V-DC-Motor-on-Phase-Control_Principle-Diagram](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/1215f584-f1fe-4574-99d1-6883fae35f82)
@@ -116,8 +116,7 @@ so the discharge-unit (on the wiring-board) is no longer switching on/off (15k-R
 
 Anyone who is familiar with DIY-etching of circuit boards can either use the 2-sided Toner Direct Method (.pdf plans for 2-sided copy in 1:1 scale) or
 give-it-out to an external PCB layout-service.  
-In a further -separate- article I will describe a new and simple method to make exact 2-sided DIY-PCB-layouts through laser-direct-burning water-resistant
-etch-protecting ink.
+In a further -separate- article I will describe a new and simple method to make exact 2-sided DIY-PCB-layouts through laser-burning resting protection-ink areas on the PCB-board.
 
 Documents are available as Eagle layouts, pdf-Files and as Gerber/Excellon files (in attached CAM .zip archives).
 So also both Arduino Sketches (for the Arduino-Nano "heart"-Module: "Firmware-Nano.ino" and the Sketch for the DIY-Speedometer-*Board* with an ATmega328-uController + 4x7-LED-Display ***or***  
