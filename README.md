@@ -7,7 +7,9 @@ The picture above shows a basic diagram for the electronic control of a 230V **D
 
 Phase control circuits are often used for simple speed controls, here with an additional Bridge-Rectifier for 230V DC electric motors,
 which are often used in medium power hobby machines (up to 10 amps ≙ approx. 2300 watts), such as lathes and milling benches.
-![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/25a48b36-aa1e-4cca-b5c9-efbb3eb60a19)
+![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/25a48b36-aa1e-4cca-b5c9-efbb3eb60a19)  
+<b>Another alignment purpose:</b>  
+[3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano_v2]()  
 Since electronic controls of 230V *DC* motors in today's hobby machines (such as lathes, milling benches, etc.) often are built with
 inexpensive components that are not protected against surges or current peaks – some electronic-failures are inevitable.
 So I decided to use a circuit that works a little more reliable, with electronic components and *modules* that are readily available
@@ -66,23 +68,23 @@ through supplied voltages + motor back EMF, to avoid uncontrolled an jerky start
 
 The control consists of several modules chained(wired) one behind the other:
 
-1. the 10AT fuse and the on/off switch with latching contactor,
-2. the (mandatory) safety switches or other 230V safety microswitches on a specific machine,
-3. the upstream EMC filter (= electromagnetic compatibility), here called EMI filter (to avoid E.M. interferences),
+1. the 10AT fuse and the on/off switch with the self-holding latching contactor,
+2. the (mandatory) safety switches plus other 230V safety microswitches on your specific machine,
+3. the upstream EMC filter (= ElectroMagnetic Compatibility), here called EMI filter (to avoid E.M. interferences),
 4. the actual (triac) phase control, using *either* a potentiometer *or* a µController with PWM-output (Pulse-Width Modulation),
-5. in parallel the 5V low-voltage circuit to generate the PWM for the phase control, using an "Arduino-Nano" module with
-   additional software-side monitoring of eventual motor-over-temperature per NTC-sensor,
+5. in parallel the 5V low-voltage circuit to generate the PWM for the phase control (2nd. version), using an "Arduino-Nano" module
+   with additional, software-side monitoring of eventual motor-over-temperature per NTC-sensor,
 6. the 15A/1500V bridge rectifier,
 7. the reversing switch, also called “pole inverter” or direction of rotation switch,
-8. a second EMI (carbon brush fire) suppression filter + a second 10AT motor fuse, and
+8. a second EMI (carbon-brush-"fire"-) suppression filter + a second 10AT motor fuse, and
 9. at last the 325V DC (=direct current) motor.
 
 ## The Wiring Board:
-The only part that still needs to be soldered together + programmed is the “wiring board”. It serves to wire/connect the Low-Voltage PWM-Signal
-to the main phase control module "Kemo-M240" and other low-voltage connections as LEDs and Sensors.  
-This wiring board also contains the Arduino Nano µController as the heart of the circuit, some passive components (resistors + capacitors) and
-the JST-Connectors for the NTC-Sensor, the Signal-LED and the Speedometer (rpm display), plus the Discharge Circuit for both Discharge Resistors,
-to avoid uncontrolled starting impulses and a jerk starting of the motor, while switching it to reverse-direction.
+The only DIY-part of this chain that still needs to be soldered together + programmed is the “wiring board”. It serves to wire/connect the Low-Voltage
+PWM-Signal to the main phase control module "Kemo-M240" and other low-voltage connections as the main Signal-LED, the NTC-Sensor and the 10k&Omega;-Poti.  
+This wiring board also contains the Arduino Nano µController as the heart of the circuit, some passive components (resistors + capacitors) and above mentionned
+(JST-)Connectors also a 4-wire JST-Connector for the Speedometer (rpm display), plus the 230VAC Discharge Circuit (Resistors), to avoid an uncontrolled,
+jerk starting of the motor while switching it into reverse-direction.
 ![Wiring-Board-Nano_sch](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/5f90a135-2036-4bc7-9c50-fc07217dd82b)
 *Circuit diagram of the low-voltage circuit "wiring board" with the Arduino Nano*  
 ![Wiring-Board-Nano_3D](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/70447996-00d2-4e98-be32-b3b7b477d32b)
