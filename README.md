@@ -10,7 +10,7 @@ which are often used in medium power hobby machines (up to 10 amps ≙ approx. 2
 
 ### Possible alignment of used modules on a 5mm acrylic base-board:
 ![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/25a48b36-aa1e-4cca-b5c9-efbb3eb60a19)
-### Another alignment purpose:
+### Another module-alignment purpose:
 ![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano_v2](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/3D-Steuerung-f%C3%BCr-B%C3%BCrsten-Gleichstrom-Motor-325V_Nano_v2.png)  
 Since electronic controls of 230V *DC* motors in today's hobby machines (such as lathes, milling benches, etc.) often are built with
 inexpensive components that are not protected against surges or current peaks – some electronic-failures are inevitable.
