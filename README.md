@@ -24,7 +24,7 @@ the speed of the motor (0-100%) as well as the motor direction of rotation.
 ![Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_Übersicht_DE](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/Phasenanschnittsteuerung-f-325V-Gleichstrom-Motor_%C3%9Cbersicht.png)
 
 ## Safety features
-This circuit has also some essential safety-functions:
+This circuit has some essential safety-functions:
 - The main module "Kemo-M240" used here contains an integrated soft start, needed to start up strong motors (>800 - 2300 Watts),
    to avoid the tripping of standard 16A household fuses
 - This module also contains an automatic overload or anti-lock shutdown with electronic reset
