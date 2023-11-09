@@ -6,8 +6,16 @@ Priciple of a Poti-Controlled Phase-Control for 230VAC (325VDC) Motors.
 The picture above shows a basic diagram for the electronic control of a 230V **DC** motor, e.g. a hobby lathe, connected to a **single-phase** (230V) **AC**-current network.
 
 ### Readme-Contents:
-- 123
-- 
+- [Top](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#phase-control-for-230v-single-phase-motors-v2)
+- [Module-Alignment](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#possible-alignment-of-used-modules-on-a-5mm-acrylic-base-board)
+- [Main-Schematic](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#main-schematic--wiring-connections)
+- [Safety-features](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#safety-features)
+- [Disclaimer](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/README.md#readme-contents)
+- [Principle-description](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#principle-description)
+- [The Wiring Board](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#the-wiring-board)
+- [Speedometer](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#speedometer)
+- [Schematic and Layout of the DIY-Speedometer](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#diy-speedometer)
+- [DIY-Boards + PCB-Layout](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#diy-boards)
 
 Phase control circuits are often used for simple speed controls, here with an additional Bridge-Rectifier for 230V DC electric motors,
 which are often used in medium power hobby machines (up to 10 amps ≙ approx. 2300 watts), such as lathes, milling benches, etc.
