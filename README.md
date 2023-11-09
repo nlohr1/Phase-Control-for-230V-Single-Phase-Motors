@@ -1,4 +1,4 @@
-### Readme-Contents:
+### Readme-Content:
 - [Basic Schematic](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#phase-control-for-230v-single-phase-motors-v2)
 - [Module-Alignments](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#possible-alignment-of-used-modules-on-a-5mm-acrylic-base-board)
 - [Main-Schematic](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#main-schematic--wiring-connections)
@@ -11,18 +11,28 @@
 - [DIY-Boards + PCB-Layout](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#diy-boards)
 
 # Phase-Control-for-230V-Single-Phase-Motors
-Control for direction-switchable 230V *direct current* (DC)-motors, whose speed (rpm) can be controlled using a Potentiometer *or*  
-using a PWM (Pulse Width Modulation) signal in the low voltage range, generated here by a microController.
+### Corrections and small modifications on new version _v2:  
+- Another alignment purpose, which saves space  
+- The Emergency-Switch now is placed within the "On"-Switch wiring-line. Previoulsy it was wrongly placed within "Off"-Switch line.  
+- A second, passive 220k&Omega-Resistor is placed after the Reversing-Switch between the two Motor-Supply-Lines (U1 and U2), instead on the wiring-board, to ensure save voltage-unload of the Motor-"Fire" EMI-Filter.
+
+**⇒ &nbsp;New files in v2:**  
+&#45; Main_v2 (base-folder)  
+&#45; Wiring-Board-Nano_v2 (sub-folder)  
+
+This is a Control-Board for direction-switchable 230V *direct current* (DC)-motors, whose speed (rpm) can be controlled using a Potentiometer *or*  
+using a PWM (Pulse Width Modulation) Signal in the low voltage range, generated here by a microController (Arduino Nano).
+
+&nbsp; &nbsp;*Phase-Control schematic: **Priciple for 230V DC-Motors** with reversing-switch.*  
 ![325V-DC-Motor-on-Phase-Control_Principle-Diagram](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/1215f584-f1fe-4574-99d1-6883fae35f82)
-&nbsp; *Phase-Control priciple for 230V **DC**-Motors with reversing-switch.*
 
 The picture above shows a basic diagram for the electronic control of a 230V **DC** motor, e.g. a hobby lathe, connected to a **single-phase** (230V) **AC**-current network.
 
 Phase control circuits are often used for simple speed controls, here with an additional Bridge-Rectifier for 230V DC electric motors,
 which are often used in medium power hobby machines (up to 10 amps ≙ approx. 2300 watts), such as lathes, milling benches, etc.
 
-### Possible alignment of used modules on a 5mm acrylic base-board:
-![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/25a48b36-aa1e-4cca-b5c9-efbb3eb60a19)
+### Alignment-v2 of used modules on a 5mm acrylic base-board:
+![3D-Steuerung-für-Bürsten-Gleichstrom-Motor-325V_Nano_v2](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/3D-Steuerung-f%C3%BCr-B%C3%BCrsten-Gleichstrom-Motor-325V_Nano_v2.png)  
 Since electronic controls of 230V *DC* motors in today's hobby machines (such as lathes, milling benches, etc.) often are built with
 inexpensive components that are not really protected against surges or current peaks – some electronic-failures are inevitable.
 So I decided to use a circuit that works a little more reliable, with electronic components and *modules* that are readily available
@@ -146,6 +156,6 @@ ATmega328-µController + 4x7-LED-Display ***or*** for the wired version with an 
 Both variants of the DIY-Speedometer are using the "Tachometer-using-Arduino.ino" sketch.  
 
 Thereto I've enclosed also a 3D-printable case + frame-parts for the Tachometer, adapted to insert+glue the 4x7-LED-Display module.
-<hr>
-<b>Github-Link to this topic:</b> https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors
+-----
 
+Github-Link: https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/
