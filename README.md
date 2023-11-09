@@ -1,14 +1,14 @@
 ### Readme-Content:
-- [Basic Schematic](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#phase-control-for-230v-single-phase-motors-v2)
-- [Module-Alignments](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#possible-alignment-of-used-modules-on-a-5mm-acrylic-base-board)
-- [Main-Schematic](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#main-schematic--wiring-connections)
-- [Safety-features](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#safety-features)
-- [Disclaimer](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/README.md#readme-contents)
-- [Principle-description](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#principle-description)
-- [The Wiring Board](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#the-wiring-board)
-- [Speedometer](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#speedometer)
-- [Schematic and Layout of the DIY-Speedometer](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#diy-speedometer)
-- [DIY-Boards + PCB-Layout](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#diy-boards)
+- [Basic Schematic](#phase-control-for-230v-single-phase-motors-v2)
+- [Module-Alignments](#alignment-v2-of-used-modules-on-a-5mm-acrylic-base-board)
+- [Main-Schematic](#main-schematic--wiring-connections)
+- [Safety-features](#safety-features)
+- [Disclaimer](#readme-contents)
+- [Principle-description](#principle-description)
+- [The Wiring Board](#the-wiring-board)
+- [Speedometer](#speedometer)
+- [Schematic and Layout of the DIY-Speedometer](#diy-speedometer)
+- [DIY-Boards + PCB-Layout](#diy-boards)
 
 # Phase-Control-for-230V-Single-Phase-Motors
 ### Corrections and small modifications on new version Main_v2:  
@@ -158,4 +158,4 @@ Both variants of the DIY-Speedometer are using the "Tachometer-using-Arduino.ino
 Thereto I've enclosed also a 3D-printable case + frame-parts for the Tachometer, adapted to insert+glue the 4x7-LED-Display module.
 -----
 
-Github-Link: https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/
+Github-Link: [https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/README.md)
