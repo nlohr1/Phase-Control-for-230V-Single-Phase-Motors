@@ -84,15 +84,16 @@ The control consists of several modules chained(wired) one behind the other:
 
 230v-Wiring between modules and the outside-parts (rear 230V inlet-panel, front machine-control-panel, motor-connections) have to be connected safely
 through PVC-isolated 1mm² wires (about AWG 17) and in-between through isolated threaded-connectors or clamping-connectors with 16A/230V.
-I used lever clamps (WAGO Hebelklemme 221-2411) for most of the "flying"-connections.  
+I used lever clamps ("WAGO Hebelklemme 221-2411") for most of the "flying"-connections.  
 For all 5Volt (=low-voltage) connections I used smaller wires (about 0.25-0.75mm² = AWG-23 upto AWG-20) with JST-Connectors (2-, 3- and 4-wired),
 as connectors for the wiring-board. Of course also it's possible to use above mentionned WAGO-connectors for smaller wires.  
 **Att: Reliability of connections** is VERY IMPORTANT, so dont choose cheap (=mostly bad) connectors, due to 99% of all electical problems
 are resulting from loose contacts/connections!
 
 ## The Wiring Board:
-The only DIY-part in this chain that still needs to be soldered together + programmed is the “wiring board”. It serves to wire/connect the Low-Voltage
-PWM-Signal to the main phase control module "Kemo-M240" and to other low-voltage connections as the Panel-Signal-"On"-LED, the NTC-Sensor and the 10k&Omega;-Poti.  
+The two DIY-parts in this chain that still needs to be soldered together + programmed are the “wiring board” and the DIY-Speedometer.  
+The Wiring-board serves to wire/connect the Low-Voltage PWM-Signal to the main phase control module "Kemo-M240" and to other low-voltage connections
+as the Panel-Signal-"On"-LED, the NTC-Sensor and the 10k&Omega;-Poti.  
 This wiring board also contains the Arduino Nano µController as the heart of the circuit, some passive components (resistors + capacitors) and above mentionned
 (JST-)Connectors plus a 4-wire JST-Connector for the Speedometer (rpm display) and the 230VAC Discharge Circuit (Power-Resistor), this to avoid uncontrolled,
 jerk startings of the motor while switching it into reverse-direction.
@@ -119,19 +120,18 @@ This tachometer can either be “manually wired”:
    or
 - soldering SMD-parts on a DIY-Board with above provided layout. For this purpose I included Schematic + Layout, as well as BOM (Bill of Materials).
 
-The speedometer for speed display/control of the motor can also be purchased as a (ready-made) module - but this has no "running" monitor Signal and
-so the discharge-unit (on the wiring-board) is no longer switching on/off (the 15k-Resistor R9).
+A speedometer to display the speed of the motor can also be purchased as a (ready-made) module - but this modules have no "running" monitor Signal and
+so the discharge-unit (on the wiring-board) is no longer switching on/off (as needed for the 15k-Resistor R9).
 
 ## DIY-Boards:
 Anyone who is familiar with DIY-etching of circuit boards can either use the 2-sided Toner Direct Method (.pdf plans for 2-sided copy in 1:1 scale) or
 give-it-out to an external PCB layout-service.  
-In a further -separate- article I will describe a new and simple method to make exact 2-sided DIY-PCB-layouts through laser-burning "resting"
-ink-protect areas on the PCB-board (resting "black" areas: substracting isolated wiring-lines from the total surface).
+In a further -separate- article I will describe a new and simpler method to make exact 2-sided DIY-PCB-layouts through laser-burning "resting"
+ink-protect areas on the PCB-board (resting "black" areas: substracted isolated wiring-lines from the total surface).
 
-All Documents are available as Eagle layouts, pdf-Files and as Gerber+Excellon files (in attached CAM .zip archives).
-So also both Arduino Sketches (for the Arduino-Nano "heart"-Module: "Firmware-Nano.ino" and the Sketch for the DIY-Speedometer-*Board* with an 
-ATmega328-uController + 4x7-LED-Display ***or***
-for the wired version with an Ardino-Mini-Pro-*Module* + 4x7-LED-Display.  
+All Documents are available as Eagle layouts, png-Image-Files and pdf-Files and also as Gerber+Excellon files (attached CAM .zip archives).
+So also both Arduino Sketches (for the Arduino-Nano "heart"-Module: "Firmware-Nano.ino" and the Sketch for the **DIY**-Speedometer-*Board* including a "naked"
+ATmega328-µController + 4x7-LED-Display ***or*** for the wired version with an Ardino-Mini-Pro-*Module* + 4x7-LED-Display(-module).  
 Both variants are using the "Tachometer-using-Arduino.ino" sketch.  
 
 Thereto I've enclosed also a 3D-printable case + frame-parts for the Tachometer, adapted to insert+glue the 4x7-LED-Display module.
