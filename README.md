@@ -12,9 +12,9 @@
 
 # Phase-Control-for-230V-Single-Phase-Motors
 ### Corrections and small modifications on new version _v2:  
-- Another alignment purpose, which saves space  
-- The Emergency-Switch now is placed within the "On"-Switch wiring-line. Previoulsy it was wrongly placed within "Off"-Switch line.  
-- A second, passive 220k&Omega-Resistor is placed after the Reversing-Switch between the two Motor-Supply-Lines (U1 and U2), instead on the wiring-board, to ensure save voltage-unload of the Motor-"Fire" EMI-Filter.
+- Another alignment purpose, which saves space.  
+- The Emergency-Switch now is placed correctly within the "Off"-Switch wiring-line. Previoulsy it was wrongly placed within "On"-Switch line.  
+- A second, passive 220k&Omega;2W-Resistor is placed after the Reversing-Switch between the two Motor-Supply-Lines (U1 and U2), instead on the wiring-board, to ensure save voltage-unload of the Motor-"Fire" EMI-Filter.
 
 **⇒ &nbsp;New files in v2:**  
 &#45; Main_v2 (base-folder for v2)  
