@@ -145,6 +145,6 @@ ink-protect areas on the PCB-board (resting "black" areas: substracted isolated 
 All Documents are available as Eagle layouts, png-Image-Files and pdf-Files and also as Gerber+Excellon files (attached CAM .zip archives).  
 So also both Arduino Sketches (for the Arduino-Nano "heart"-Module: "Firmware-Nano.ino" and the Sketch for the **DIY**-Speedometer-*Board* including a "naked"
 ATmega328-µController + 4x7-LED-Display ***or*** for the wired version with an Ardino-Mini-Pro-*Module* + 4x7-LED-Display(-module).  
-Both variants are using the "Tachometer-using-Arduino.ino" sketch.  
+Both variants of the DIY-Speedometer are using the "Tachometer-using-Arduino.ino" sketch.  
 
 Thereto I've enclosed also a 3D-printable case + frame-parts for the Tachometer, adapted to insert+glue the 4x7-LED-Display module.
