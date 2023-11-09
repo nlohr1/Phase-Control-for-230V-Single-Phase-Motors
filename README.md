@@ -142,7 +142,7 @@ give-it-out to an external PCB layout-service.
 In a further -separate- article I will describe a new and simpler method to make exact 2-sided DIY-PCB-layouts through laser-burning "resting"
 ink-protect areas on the PCB-board (resting "black" areas: substracted isolated wiring-lines from the total surface).
 
-All Documents are available as Eagle layouts, png-Image-Files and pdf-Files and also as Gerber+Excellon files (attached CAM .zip archives).
+All Documents are available as Eagle layouts, png-Image-Files and pdf-Files and also as Gerber+Excellon files (attached CAM .zip archives).  
 So also both Arduino Sketches (for the Arduino-Nano "heart"-Module: "Firmware-Nano.ino" and the Sketch for the **DIY**-Speedometer-*Board* including a "naked"
 ATmega328-µController + 4x7-LED-Display ***or*** for the wired version with an Ardino-Mini-Pro-*Module* + 4x7-LED-Display(-module).  
 Both variants are using the "Tachometer-using-Arduino.ino" sketch.  
