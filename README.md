@@ -7,7 +7,7 @@ The picture above shows a basic diagram for the electronic control of a 230V **D
 
 ### Readme-Contents:
 - [Top](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#phase-control-for-230v-single-phase-motors-v2)
-- [Module-Alignment](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#possible-alignment-of-used-modules-on-a-5mm-acrylic-base-board)
+- [Module-Alignments](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#possible-alignment-of-used-modules-on-a-5mm-acrylic-base-board)
 - [Main-Schematic](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#main-schematic--wiring-connections)
 - [Safety-features](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#safety-features)
 - [Disclaimer](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/blob/main/README.md#readme-contents)
