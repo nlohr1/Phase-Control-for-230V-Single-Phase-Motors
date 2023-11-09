@@ -1,0 +1,118 @@
+Phase control for single-phase motors - up to 2300 watts
+--------------------------------------------------------
+
+Control for direction-switchable 230V *direct current* motors, whose speed (rpm) can be controlled using a
+10k potentiometer *or* a PWM (pulse width modulation in the low voltage range) can be controlled via uController.
+
+Priciple of a Poti-Controlled Phase-Control of 230AC/320VDC Motor
+(3D image of the entire motor control)
+
+Phase control circuits are often used for speed control, here a PA with a downstream one
+Rectifier for reversible 230V DC electric motors, which are often used in hobby machines
+medium power (up to 10 amps or up to approx. 2300 watts) such as lathes and milling benches.
+
+Since the electronic controls of 230V *DC* motors in today's hobby machines such as lathes, milling benches, etc.
+often have inexpensive components that are not protected against surges or current peaks – therefore
+unfortunately failures are inevitable, so I decided to use a circuit that works a little more reliable,
+with electronic components and *modules* that are readily available on the market and more reliable.
+All 230VDC (direct current!) carbon brush motors with up to 2300W can be controlled with this phase control.
+It allows you to control the speed of the motor (0-100%) as well as the motor direction of rotation.
+
+Safety features of this single-phase speed-control:
+
+In addition, this circuit has essential safety circuits:
+- The main module "Kemo-M240" used here contains an integrated soft start, needed to start up larger motors,
+   to avoid the tripping of standard 16A household fuses
+- This module also contains an automatic overload or anti-lock shutdown with electronic reset
+- If the motor contains a built-in NTC thermistor (with 100kOhm), the µController can provide a possible
+   Monitor engine overheating protection. When 80°C is exceeded, the µC switches off the PWM goes into an endless loop,
+   and can then only be reactivated by switching off the power or by pushing the reset-button of the controller.
+
+!!!: Protection against direction of rotation switching *while driving* is NOT provided here: Due to this, if
+an "EMF short circuit" occurs, the "Kemo-M240" controller switches off very quickly and thus at least protects
+the mechanics of the machine. The electronics can then only be used again after a complete restart or Power shutdown.
+
+Disclaimer:
+!!! It goes without saying that you reproduce this circuit at your own risk and responsibility!!!
+Anyone who does not have sufficient knowledge of how to handle *dangerous* 230VAC currents or 325VDC(ss) voltages(!):
+If you are not familiar with electrical or electronic components, you should either hire a specialist to do it for you
+or stay away from it!
+“Experiments” without special knowledge and appropriate protection(s) on high voltages can quickly end in death
+following an electric shock! And sudden cardiac-arrest can occur even days after an electric shock! - if then
+no immediate help is nearby...
+In any case, a replica of this project is done expressly and explicitly *at your own risk*!
+
+Further notes:
+- Three-phase motor activations are hereby excluded due to the principle! This circuit only controls single phase Engines!
+- The circuit also works with (simpler) *AC* single-phase asynchronous motors - omitting the bridge rectifier used here.
+   However, a connected *AC* motor then is no longer direction-reversible.
+- It is NOT suitable for capacitor motors! - "Capacitor starting motors" are often only used for simple purposes and
+   built + used for on/off operation only (such as for smaller hobby drill presses) - and are not speed-regulated. But
+   it depends specifically on the type of engine, some capacitor motors can still be regulated (speed-limited).
+   However, any weak to poor efficiency that occurs should be taken into account (including heat losses).
+
+Factual suggestions for improvements and changes are always welcome!
+
+(principle sketch)
+
+The picture shows a possible, basic structure or the basic diagram of the electronic control
+DC motor, e.g. a hobby lathe, which is connected to a single-phase 230VAC alternating current network - therefore
+This circuit is only designed for a maximum output of 2300 watt motors (=> 10A fuse!) - but what
+should be sufficient for most machines in the hobby sector (⇒ pay attention to the motor nameplate!).
+
+(Main Wiring Diagram)
+
+Principle description:
+The control works according to the 230VAC phase control principle (similar to a lamp dimmer), but in contrast
+it may neutralize the EMF (electromotive force) of a motor and is determined by the selection of electronic components.
+A higher quality module is used to control the motor, which is controlled via PWM (Pulse Width Modulation).
+The micro-controller “Arduino-Nano” used here generates the PWM and (if present) it also evaluates an NTC sensor
+installed in the motor, to check any possible Engine overtemperature.
+The speedometer for speed display does not run - as usually - *independently* of the main control (RPM display on a LED display), 
+but also sends back a "busy" signal to the µController, which therefore "knows" when the motor is running or
+when it is standing still, in order to ensure active discharge of the triac snubber and the EMI or EMC-filters charged
+through supplied voltages and the motor back EMF, in order to avoid an uncontrolled, jerky starting of the DC-motor
+after changing direction!
+
+The control consists of several modules “wired” one behind the other:
+
+1. the 10AT fuse and the on/off switch with latching contactor,
+2. the (mandatory) safety switches or other 230V safety microswitches on a specific machine,
+3. the upstream EMC filter (= electromagnetic compatibility), here called EMI filter (to avoid E.M. interferences),
+4. the actual PWM (triac) phase control (control using a potentiometer *or* pulse-width modulation),
+5. in parallel the low-voltage electronics (+5V/GND) to generate the PWM for the phase control, using an "Arduino-Nano"
+    module with additional software-side monitoring of eventual motor-over-temperature with external NTC-sensor,
+6. the 15A/1500V bridge rectifier,
+7. the “pole inverter”, also called reversing switch or direction of rotation switch,
+8. a second EMI (carbon brush fire) suppression filter + a second 10AT motor fuse,
+9. and at last the 325V DC (=direct current) motor.
+
+The only part that still needs to be soldered together + programmed is the “wiring board” to connect the Low-Voltage
+PWM-Signal to the main phase control module "Kemo-M240". This wiring board contains also the Arduino Nano µController 
+as the heart of the circuit, some passive components (resistors + capacitors) and the JST-Connectors for Sensors
+and the tachometer (rpm display) + the Discharge Circuit for both Discharge Resistors, to avoid uncontrolled
+starting impulses / jerk starting of the motor switching it to reverse-direction.
+
+The “wiring board”:
+(Circuit diagram of the low-voltage circuit "wiring board" with the Arduino Nano)
+(3D image of the "wiring board")
+
+The “wiring board” with the Arduino Nano is provided as schematic and as PCB-layout in Eagle format - which can
+easily be converted into other formats.
+
+Speedometer:
+(Picture)
+
+The modified speedometer consists of a 4-digit LED display and an "Arduino Mini Pro" with 2 pieces of
+10k resistors to GND. This tachometer can either be “manually wired”:
+- by wire-connecting the 4-digit LED-Display to the Mini-Pro + 2x 10k resistors to GND,
+   or
+- soldered together on a SMD-Board with the provided layout. Both Schematic + Layout as well as the BOM
+  (Bill of Materials) + Software are included.
+
+The speedometer for speed display/control can also be purchased as a (ready-made) module - but then
+the running monitoring + also the unloading unit is no longer thereby (and can then be ignored).
+
+Anyone who is familiar with the DIY production of circuit boards can either use the Toner Direct
+Method (.pdf plans for 2-sided copy in 1:1 scale) or roll it out to an external PCB layout-service.
+Documents are available both as Eagle layouts and as Gerber/Excellon files (in the .zip archive) attached.
