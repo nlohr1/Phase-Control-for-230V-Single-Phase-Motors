@@ -137,7 +137,7 @@ A speedometer to display the speed of the motor can also be purchased as a (read
 so the discharge-unit (on the wiring-board) is no longer switching on/off (as needed for the 15k-Resistor R9).
 
 ## DIY-Boards:
-Anyone who is familiar with DIY-etching of circuit boards can either use the 2-sided Toner Direct Method (.pdf plans for 2-sided copy in 1:1 scale) or
+Anyone who is familiar with DIY-etching of circuit boards can either use the 2-sided Toner Direct Method (see .pdf plans for 2-sided copy in 1:1 scale) or
 give-it-out to an external PCB layout-service.  
 In a further -separate- article I will describe a new and simpler method to make exact 2-sided DIY-PCB-layouts through laser-burning "resting"
 ink-protect areas on the PCB-board (resting "black" areas: substracted isolated wiring-lines from the total surface).
