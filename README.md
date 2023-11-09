@@ -5,6 +5,10 @@ using a PWM (Pulse Width Modulation) signal in the low voltage range, generated 
 Priciple of a Poti-Controlled Phase-Control for 230VAC (325VDC) Motors.  
 The picture above shows a basic diagram for the electronic control of a 230V **DC** motor, e.g. a hobby lathe, connected to a **single-phase** (230V) **AC**-current network.
 
+### Readme-Contents:
+- 123
+- 
+
 Phase control circuits are often used for simple speed controls, here with an additional Bridge-Rectifier for 230V DC electric motors,
 which are often used in medium power hobby machines (up to 10 amps ≙ approx. 2300 watts), such as lathes, milling benches, etc.
 
@@ -36,7 +40,7 @@ This circuit has some essential safety-functions:
 the "Kemo-M240" controller shots the power-control off in a fractions of a second and thus at least the mechanics of the machine is protected.
 Electronics then can only be reactivated after a complete restart - either per µContoller-Reset or after a complete Main-Power Shutdown.
 
-Disclaimer:
+## Disclaimer:  
 !!! It goes without saying that you reproduce this circuit at your own risk and responsibility !!!
 Anyone who does not have sufficient knowledge of how to handle *dangerous* 230VAC currents or 325VDC(ss) voltages(!):
 If you are not familiar with electrical or electronic components, you should either hire a specialist to do it for you
