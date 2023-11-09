@@ -10,7 +10,7 @@
 - [Schematic and Layout of the DIY-Speedometer](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#diy-speedometer)
 - [DIY-Boards + PCB-Layout](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/#diy-boards)
 
-# Phase-Control-for-230V-Single-Phase-Motors v2
+# Phase-Control-for-230V-Single-Phase-Motors
 Control for direction-switchable 230V *direct current* (DC)-motors, whose speed (rpm) can be controlled using a Potentiometer *or*  
 using a PWM (Pulse Width Modulation) signal in the low voltage range, generated here by a microController.
 ![325V-DC-Motor-on-Phase-Control_Principle-Diagram](https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors/assets/49346586/1215f584-f1fe-4574-99d1-6883fae35f82)
