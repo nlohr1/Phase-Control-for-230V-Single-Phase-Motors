@@ -148,3 +148,6 @@ ATmega328-µController + 4x7-LED-Display ***or*** for the wired version with an 
 Both variants of the DIY-Speedometer are using the "Tachometer-using-Arduino.ino" sketch.  
 
 Thereto I've enclosed also a 3D-printable case + frame-parts for the Tachometer, adapted to insert+glue the 4x7-LED-Display module.
+<hr>
+<b>Github-Link to this topic:</b> https://github.com/nlohr1/Phase-Control-for-230V-Single-Phase-Motors
+
