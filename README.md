@@ -17,7 +17,7 @@
 - A second, passive 220k&Omega-Resistor is placed after the Reversing-Switch between the two Motor-Supply-Lines (U1 and U2), instead on the wiring-board, to ensure save voltage-unload of the Motor-"Fire" EMI-Filter.
 
 **⇒ &nbsp;New files in v2:**  
-&#45; Main_v2 (base-folder)  
+&#45; Main_v2 (base-folder for v2)  
 &#45; Wiring-Board-Nano_v2 (sub-folder)  
 
 This is a Control-Board for direction-switchable 230V *direct current* (DC)-motors, whose speed (rpm) can be controlled using a Potentiometer *or*  
